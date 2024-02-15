@@ -246,5 +246,5 @@ Finally, use the `cor()` function to calculate the correlation coefficient of in
 cor(corre.df$edyrs, corre.df$uswage1) 
 ```
 
-* **What can we conclude from this coefficient?** 
+* **What can we conclude from this coefficient?**  
 
