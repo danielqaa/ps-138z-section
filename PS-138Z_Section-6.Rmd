@@ -38,7 +38,7 @@ Let's take a look at the header of our dataframe using the command `head()`:
 If we want to view the entire dataframe, we can use the `print()` function: 
 
 ```{r}
-#`print()
+# print()
 ```
 
 Finally, let's find the dimensions of the dataframe using the function `dim()` 
@@ -61,7 +61,7 @@ Finally, let's find the dimensions of the dataframe using the function `dim()`
 
 In R, functions are blocks of code that perform a specific task or computation. The functions we used above are basic functions included in R, but we can also create our custom functions and assign them a name.
 
-* **What is the difference between a variable and an observation?* 
+* **What is the difference between a variable and an observation?**
 
 ```{r}
 # 
@@ -296,7 +296,7 @@ Finally, let's use a scatter plot to illustrate graphically this relationship. W
 # plot() 
 ```
 
-We can also use `ggplot2`, a very popular and very powerful data visualization package. First, we have to load the package (we installed by default it when we installed the `tidyverse` before): 
+We can also use `ggplot2`, a very popular data visualization package. First, we have to load the package (we installed it by default when we installed the `tidyverse` above): 
 
 ```{r}
 library("ggplot2")
@@ -311,7 +311,7 @@ Remember: many issues arise simply from careless mistakes. Here are two things t
 
 We can create the scatter plot using the following syntax: `ggplot(data = your data object, aes(x = your x variable, y = your y variable) + geom_point(size = the size you desire for the points)`
 
-Note: the arguments within `geom_point()` are optional (i.e., not strictly required for `ggplot` to produde the scatterplot)
+Note: the arguments within `geom_point()` are optional (i.e., not strictly required for `ggplot` to produce the scatterplot).
 
 
 ```{r}
@@ -319,4 +319,4 @@ ggplot(data = corre.df, aes(x=edyrs, y=uswage1)) +
   geom_point(size=5, shape=21)
 ```
 
-This was a short introduction to `ggplot2`. We will stop here. In two weeks, we will continue learning how to use this package.  
+With this figure, we conclude a short introduction to `ggplot2`. We will stop here. In two weeks, we will continue learning how to use this package.  
