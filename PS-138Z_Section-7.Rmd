@@ -183,6 +183,8 @@ Now, calculate the same descriptive statistics and produce the same plots for th
 
 ```
 
+# Plots: sex and educational level 
+
 ```{r}
 
 ```
