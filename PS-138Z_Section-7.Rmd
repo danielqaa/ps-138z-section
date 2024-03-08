@@ -53,7 +53,7 @@ range(df.filter$age, na.rm = TRUE)
 
 Note that we must use the argument `na.rm = TRUE` when calculating the range of `age` because some values in this variable are coded as `NA`. The variable `sex` ranges from `1` to `2`, which is completely normal (check the codebook). The minimum value of `age` is `5` (a normal value), but the maximum is `8888`. Therefore, we know that some missing values in this variable are coded as `8888`, and we have to do something about it. 
 
-Lets replace th values coded as `8888` in `age` by `NA`: 
+Lets replace the values coded as `8888` in `age` by `NA`: 
 
 ```{r}
 df.filter$age[df.filter$age == 8888] <- NA
@@ -66,7 +66,7 @@ We replaced these values because we know that R interprets `8888` as numerical d
 range(df.filter$age, na.rm = TRUE)
 ```
 
-Now that we have cleaned the data, we can start producing the other descriptive statistics in addition to the range. Use the `mean()` and `median()` functions to find the number of males and females and the mean and median age. Remember that `age` still has `NA`s, so you should use the argument `na.rm = TRUE` again. 
+Now that we have cleaned the data, we can start producing the other descriptive statistics in addition to the range. Use the `table()`, mean()` and `median()` functions to find the number of males and females and the mean and median age. Remember that `age` still has `NA`s, so you should use the argument `na.rm = TRUE` again. 
 
 ```{r}
 # table()
