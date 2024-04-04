@@ -8,7 +8,6 @@ output:
 
 ```{r}
 # Uploading packages
-library(data.table)
 library(tidyverse)
 ```
 
@@ -37,6 +36,10 @@ sea <- read.csv("sea.csv")
 
 > **Answer:**
 
+```{r}
+
+```
+
 ## b. 
 
 #### Code:
@@ -47,6 +50,11 @@ sea <- read.csv("sea.csv")
 
 > **Answer:**
 
+```{r}
+
+```
+
+
 ## c.  
 
 #### Code:
@@ -56,6 +64,10 @@ sea <- read.csv("sea.csv")
 ```
 
 > **Answer:**
+
+```{r}
+
+```
 
 ## d.
 
@@ -71,17 +83,33 @@ sea <- read.csv("sea.csv")
 
 > **Answer:**
 
+```{r}
+
+```
+
 ## e.  
 
 > **Answer:**
+
+```{r}
+
+```
 
 ## f.  
 
 > **Answer:**
 
+```{r}
+
+```
+
 ## g.  
 
 > **Answer:**
+
+```{r}
+
+```
 
 ## h. 
 
@@ -93,10 +121,18 @@ sea <- read.csv("sea.csv")
 
 > **Answer:**
 
+```{r}
+
+```
+
 
 ## i.  
 
 > **Answer:**
+
+```{r}
+
+```
 
 # EXTRA CREDIT (3 points)
 
@@ -110,6 +146,10 @@ sea <- read.csv("sea.csv")
 
 > **Answer:**
 
+```{r}
+
+```
+
 ## k.
 
 #### Code:
@@ -119,6 +159,10 @@ sea <- read.csv("sea.csv")
 ```
 
 > **Answer:**
+
+```{r}
+
+```
 
 ## l. 
 
@@ -130,6 +174,9 @@ sea <- read.csv("sea.csv")
 
 > **Answer:**
 
+```{r}
+
+```
 
 
 
