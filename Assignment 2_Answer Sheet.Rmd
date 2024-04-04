@@ -21,6 +21,8 @@ sea <- read.csv("sea.csv")
 
 ## a.  
 
+### Code:
+
 ```{r}
 
 ```
@@ -37,6 +39,8 @@ sea <- read.csv("sea.csv")
 
 ## b. 
 
+### Code:
+
 ```{r}
 
 ```
@@ -45,13 +49,17 @@ sea <- read.csv("sea.csv")
 
 ## c.  
 
+### Code:
+
 ```{r}
 
 ```
 
 > **Answer:**
 
-## d.  
+## d.
+
+### Code:
 
 ```{r}
 
@@ -75,7 +83,9 @@ sea <- read.csv("sea.csv")
 
 > **Answer:**
 
-## h.  
+## h. 
+
+### Code:
 
 ```{r}
 
@@ -92,6 +102,8 @@ sea <- read.csv("sea.csv")
 
 ## j
 
+### Code:
+
 ```{r}
 
 ```
@@ -100,6 +112,8 @@ sea <- read.csv("sea.csv")
 
 ## k.
 
+### Code:
+
 ```{r}
 
 ```
@@ -107,6 +121,8 @@ sea <- read.csv("sea.csv")
 > **Answer:**
 
 ## l. 
+
+### Code:
 
 ```{r}
 
