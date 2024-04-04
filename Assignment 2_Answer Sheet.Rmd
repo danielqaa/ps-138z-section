@@ -65,9 +65,7 @@ output:
 
 ## i.  
 
-::: {#hello .greeting .message style="color: red;"}
-Hello **world**!
-:::
+*Answer:*
 
 # Section 1
 
