@@ -17,7 +17,7 @@ library(tidyverse)
 sea <- read.csv("sea.csv")
 ```
 
-# Section 1
+# Section 1 (10 points)
 
 ## a.  
 
@@ -98,7 +98,7 @@ sea <- read.csv("sea.csv")
 
 > **Answer:**
 
-# Section 2
+# EXTRA CREDIT (3 points)
 
 ## j
 
