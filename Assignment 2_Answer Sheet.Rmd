@@ -1,0 +1,88 @@
+---
+title: "Short Writing Assignment 2: Quantitative Immigration Data Analysis - Answer Sheet"
+output:
+  pdf_document:
+    df_print: paged
+---
+
+# Section 1
+
+## a.  
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+## b.  
+
+```{r}
+
+```
+
+## c.  
+
+```{r}
+
+```
+
+## d.  
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
+## e.  
+
+
+## f.  
+
+
+## g.  
+
+
+## h.  
+
+```{r}
+
+```
+
+## i.  
+
+::: {#hello .greeting .message style="color: red;"}
+Hello **world**!
+:::
+
+# Section 1
+
+## j
+
+```{r}
+
+```
+
+## k. 
+
+```{r}
+
+```
+
+## l. 
+
+```{r}
+
+```
+
+
