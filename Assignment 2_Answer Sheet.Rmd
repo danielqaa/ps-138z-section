@@ -5,6 +5,18 @@ output:
     df_print: paged
 ---
 
+
+```{r}
+# Uploading packages
+library(data.table)
+library(tidyverse)
+```
+
+```{r}
+# Uploading dataset
+sea <- read.csv("sea.csv")
+```
+
 # Section 1
 
 ## a.  
@@ -21,17 +33,23 @@ output:
 
 ```
 
-## b.  
+> **Answer:**
+
+## b. 
 
 ```{r}
 
 ```
+
+> **Answer:**
 
 ## c.  
 
 ```{r}
 
 ```
+
+> **Answer:**
 
 ## d.  
 
@@ -43,19 +61,19 @@ output:
 
 ```
 
+> **Answer:**
 
 ## e.  
 
->
+> **Answer:**
 
 ## f.  
 
->
+> **Answer:**
 
 ## g.  
 
->
-
+> **Answer:**
 
 ## h.  
 
@@ -63,11 +81,14 @@ output:
 
 ```
 
+> **Answer:**
+
+
 ## i.  
 
-*Answer:*
+> **Answer:**
 
-# Section 1
+# Section 2
 
 ## j
 
@@ -75,16 +96,24 @@ output:
 
 ```
 
-## k. 
+> **Answer:**
+
+## k.
 
 ```{r}
 
 ```
+
+> **Answer:**
 
 ## l. 
 
 ```{r}
 
 ```
+
+> **Answer:**
+
+
 
 
