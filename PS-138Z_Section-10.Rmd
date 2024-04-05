@@ -1,0 +1,243 @@
+---
+title: "PS 138Z - The Politics of Immigration: Section 10"
+output:
+  pdf_document:
+  df_print: paged
+  html_document: default
+date: "2024-04-4"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Introduction
+
+Today, we will continue using the `ggplot` package for graphical data analysis. This time, we will use a dataset describing a **simulated nationally representative sample of foreign-born US residents in 2023**. The dataset has five variables: 
+
+* `sex`: participant's sex (male or female)/
+* `age`: participant's age in years.  
+* `state`: state of residence. 
+* `edyrs`: school years completed.
+* `undocu`: legal immigration status ("Yes" or "No" for undocumented status).
+* `income`: household income in thousands of US dollars.
+
+As usual, we start by uploading the dataset and the packages we anticipate needing.
+
+
+```{r} 
+data <- read.csv("sim.data.csv")
+```
+
+```{r, warning= FALSE, message = FALSE}
+library(tidyverse)
+```
+
+# 2. Basic data description 
+
+To familiarize yourself with the dataset's structure, use the `head()` function command to visualize the first $15$ rows.
+
+
+```{r}
+head(data, 15)
+```
+
+Use the `nrow()` and `ncol()` functions to calculate the dataset's number of rows and columns.
+
+```{r}
+nrow(data)
+ncol(data)
+```
+**How many individuals were surveyed? How many variables describe them in the dataset?**
+
+```{r}
+
+
+```
+
+> **Answer:**
+
+# 3. Graphical analysis
+
+## 3.1. State of residence and household income
+
+Immigrants are homogeneously distributed over the national territory. We have seen in the lecture and the readings that immigrants tend to locate in areas of higher economic opportunity. To illustrate this dynamic, we can produce a bar plot showing the number of individuals in the sample residing in each state. Let's start by creating a new dataset with the information we need for this plot: 
+
+```{r}
+plot1.df <- data %>%
+  group_by(state) %>%
+  count()
+
+plot1.df
+```
+
+In this opportunity, we will build the plot layer by layer to see more clearly how `ggplot` works. We start with creating the data and mapping layer. **Note that we use the `reorder()` function to organize states from more to fewer residents.**
+
+```{r}
+plot1 <- ggplot(plot1.df, aes(x = reorder(state, -n),
+                              y = n))
+plot1
+```
+Then, we add the geometry layer
+
+```{r}
+plot1 <- plot1 + geom_col() 
+plot1
+```
+Finally, we add the labels, title, and theme: 
+
+```{r}
+plot1 <- plot1 + labs(
+  title = "Sample Distribution by State of Residence",
+  x = "State",
+  y = "Count") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        axis.title.y = element_text(size=10))
+  
+plot1 
+```
+
+Use the dataset we created for this plot and the `filter()` function to calculate how many individuals in the sample live in California.
+
+```{r}
+plot1.df %>% filter(state == "California")
+```
+
+Following a similar logic, we can create a bar plot showing the mean annual household income by state of residence. Again, we start by creating a dataset with the specific information we need:
+
+```{r}
+plot2.df <- data %>%
+  filter(!is.na(income)) %>%
+  group_by(state) %>%
+  summarise_at(vars(income), mean, na.rm = TRUE)
+
+plot2.df
+```
+
+We can create the plot all at once to save time and space:
+
+```{r}
+plot2 <- ggplot(plot2.df, aes(x = reorder(state, -income),
+                              y = income)) +
+  geom_col() +
+  labs(
+    title = "Mean Household Income by State of Residence",
+    x = "State",
+    y = "Thousands of US dollars") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        axis.title.y = element_text(size=10))
+  
+plot2  
+```
+
+
+Use the dataset we created for this plot and the `filter()` function to calculate the mean household income in California.
+
+```{r}
+plot2.df %>% filter(state == "California")
+```
+
+## 3.2. Legal immigration status, educational level, and household income
+
+Use the `table()` function to calculate how many individuals in the sample are undocumented and how many are not. 
+
+```{r}
+table(data$undocu)
+```
+
+Now, let's generate a plot showing the distribution of annual household income by legal immigration status. Since `income` may have missing values, we use the `filter()` function to eliminate any row containing an `NA` in this variable. 
+
+```{r}
+plot3.df <- data %>% filter(!is.na(income))
+```
+
+Again, we can generate the plot all at once to save time and space:
+
+```{r}
+plot3 <- ggplot(plot3.df, aes(x=income, color= undocu)) +
+  geom_histogram(binwidth = 2, fill="white", alpha=0.5) +
+  labs(
+    title = "Annual Household Income and Legal Immigration Status",
+    x = "Thousands of US dollars)",
+    y = "Frequency",
+    color = "Undocumented") +
+  theme_test()
+
+plot3
+```  
+**What conclusions can you draw from this plot?**
+
+```{r}
+
+```   
+   
+We can generate a similar plot showing the distribution of educational attainment by legal immigration status.   
+   
+```{r}
+plot4.df <- data %>% filter(!is.na(edyrs))
+
+plot4 <- ggplot(plot4.df, aes(x=edyrs, color= undocu)) +
+  geom_histogram(binwidth = 1, fill="white", alpha=0.5) +
+  labs(
+    title = "Educational Attainment and Legal Immigration Status",
+    x = "School years completed)",
+    y = "Frequency",
+    color = "Undocumented") +
+  theme_test()
+
+plot4
+``` 
+
+**What conclusions can you draw from this plot?**
+
+```{r}
+
+```
+
+
+Finally, let's use a scatter plot with a linear trend line to describe the relationship between educational attainment and household income level among all the individuals in the sample. 
+
+   
+```{r}
+plot5.df <- plot4.df %>% filter(!is.na(edyrs))
+
+plot5 <- ggplot(plot4.df, aes(x= edyrs, y = income)) +
+  geom_point(alpha = 0.1, size = 2, position = "jitter") +
+  geom_smooth(method = lm) +
+  labs(
+    title = "Educational Attainment and Annual Household Income",
+    x = "School years completed",
+    y = "Thousands of US dollars") +
+  theme_test()
+plot5
+```
+
+**What conclusions can you draw from this plot?**
+
+```{r}
+
+```
+
+We can produce a similar plot displaying different colors and trend lines for individuals with different legal immigration statuses.
+
+```{r}
+plot6 <- ggplot(plot4.df, aes(x= edyrs, y = income, color = undocu)) +
+  geom_point(alpha = 0.1, size = 2, position = "jitter") +
+  geom_smooth(method = lm) +
+  labs(
+    title = "Educational Attainment and Annual Household Income by Legal Immigration Status",
+    x = "School years completed",
+    y = "Thousands of US dollars") +
+  theme_test()
+plot6
+```
+
+
+**What conclusions can you draw from this plot?**
+
+```{r}
+
+```
+
+
+
